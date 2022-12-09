@@ -3,16 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	a := 2
-	b := &a
-	fmt.Println(a, b)
-	a = 5
-	fmt.Println(a, *b)
-	*b = 20
-	fmt.Println(a, *b)
-	a = 202020
-	fmt.Println(a, *b)
-	fmt.Println(a, b)
-	fmt.Println(&a, b)
-	fmt.Println(&a, &b)
+	jae := map[string]string{"name": "jae", "age": "12"}
+	for _, value := range jae {
+		fmt.Println(value)
+	}
 }
