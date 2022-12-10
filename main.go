@@ -1,15 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
 
-type person struct {
-	name    string
-	age     int
-	favFood []string
-}
+	"github.com/wkd-woo/gojobs/mydict"
+)
 
 func main() {
-	favfood := []string{"beef", "coffee"}
-	jae := person{name: "jae", age: 25, favFood: favfood}
-	fmt.Println(jae)
+	dictionary := mydict.Dictionary{}
+	baseWord := "hello"
+	dictionary.Add(baseWord, "First")
+	dictionary.Delete(baseWord)
+	word, err := dictionary.Search(baseWord)
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println(word)
+	}
 }
